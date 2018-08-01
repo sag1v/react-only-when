@@ -1,27 +1,46 @@
-# react-only-when
+# react-only
 
-> 
+> A declarative component for conditional rendering
 
-[![NPM](https://img.shields.io/npm/v/react-only-when.svg)](https://www.npmjs.com/package/react-only-when) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-only.svg)](https://www.npmjs.com/package/react-only) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save react-only-when
+npm install --save react-only
 ```
 
 ## Usage
-
 ```jsx
-import React, { Component } from 'react'
+import Only from 'react-only'
 
-import MyComponent from 'react-only-when'
+<Only when={true}>
+  <h1>Here I Am</h1>
+</Only>
+```
 
-class Example extends Component {
-  render () {
+## Full Example
+```jsx
+import React from 'react';
+import Only from 'react-only'
+
+class App extends React.Component {
+  state = {
+    show: true
+  };
+
+  toggle = () => this.setState(state => ({ show: !state.show }));
+
+  render() {
+    const { show } = this.state;
     return (
-      <MyComponent />
-    )
+      <div className="app">
+        <button onClick={this.toggle}>Toggle</button>
+        <Only when={show}>
+          <h1>Here I Am</h1>
+        </Only>
+      </div>
+    );
   }
 }
 ```
