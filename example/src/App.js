@@ -70,7 +70,7 @@ class App extends React.Component {
           <button onClick={this.toggle} className="toggle-btn">Toggle when</button>
         </div>
         <div className="elements">
-          <Only ref={ref => this.onlyExample = ref} when={show} hiddenMode={hiddenMode} className={cssValue}>
+          <Only when={show} hiddenMode={hiddenMode} className={cssValue}>
             <div style={{ color: "green" }} className="some-class">
               <h1>Here I Am</h1>
             </div>
