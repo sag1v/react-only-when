@@ -44,6 +44,25 @@ class App extends React.Component {
   }
 }
 ```
+<hr/>
+
+## props
+| prop name  | type          | default      | isRequired | description                                                |
+|------------|---------------|--------------|------------|------------------------------------------------------------|
+| children   | react element | null         | true       | A single child element                                     |
+| when       | bool          | false        | true       | When true, children will rendered as is                    |
+| hiddenMode | string        | "withNull"   | false      | Determines how children should be hidden                   |
+| className  | string        | "r-o_hidden" | false      | This is working in combination with hiddenMode={"withCss"} |
+
+### hiddenMode enum
+| hiddenMode       | description                                                                      |
+|------------------|----------------------------------------------------------------------------------|
+| "withNull"       | Will not render the child                                                        |
+| "withDisplay"    | Will render the child with display:none                                          |
+| "withVisibility" | Will render the child with visibility:hidden                                     |
+| "withCss"        | Will render the child with a CSS class (you can pass it a custom className prop) |
+
+<hr/>
 
 ## License
 

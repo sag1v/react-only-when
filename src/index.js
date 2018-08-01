@@ -9,14 +9,25 @@ class Only extends Component {
   }
 
   static propTypes = {
+    /** A single child element */
     children: PropTypes.element.isRequired,
+
+    /** When true, children will rendered as is  */
     when: PropTypes.bool.isRequired,
+
+    /** Determines how "react-only-when" should hide the child element 
+     * "withNull": Will not render the child
+     * "withDisplay": Will render the child with display:none  
+     * "withVisibility": Will render the child with visibility:hidden
+     * "withCss": Will render the child with a CSS class (you can pass it a custom className prop)
+    */
     hiddenMode: PropTypes.oneOf([
       "withNull",
       "withDisplay",
       "withVisibility",
       "withCss"
     ]),
+    /** This is working in combination with hiddenMode={"withCss"}   */
     className: PropTypes.string
   }
 
